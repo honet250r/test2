@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Comic Neue';
+  src: url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+}
+
+body {
+  margin: 0;
+  font-family: 'Comic Neue', 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes particle {
+  0% {
+    transform: scale(0) translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translate(var(--tw-translate-x), var(--tw-translate-y));
+    opacity: 0;
+  }
+}
+
+.animate-particle {
+  --tw-translate-x: calc((random(200) - 100) * 1%);
+  --tw-translate-y: calc((random(200) - 100) * 1%);
+  animation: particle 1.5s ease-out forwards;
+}
+
+/* Hide number input arrows */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
